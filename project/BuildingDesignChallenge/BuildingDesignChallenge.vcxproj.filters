@@ -13,5 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Addons">
+      <UniqueIdentifier>{0d6ffc8c-3b1c-43c4-8854-faa4865bc50d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Addons">
+      <UniqueIdentifier>{519c6eaa-f2c2-4d9c-bd92-71c8fb86ff20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Addons\Entrances">
+      <UniqueIdentifier>{9933a295-e109-46ae-bb6d-77add27b246b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Addons\Rooms">
+      <UniqueIdentifier>{d63547ea-211b-4add-a0d9-7efc94b524e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Addons\Entrances">
+      <UniqueIdentifier>{e2c009d7-82f5-41f7-a922-55dba4e89d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Addons\Rooms">
+      <UniqueIdentifier>{54aedc65-8b4b-4f4b-815a-2df71dbc3db4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelAddon.cpp">
+      <Filter>Source Files\Addons</Filter>
+    </ClCompile>
+    <ClCompile Include="RevolvingDoor.cpp">
+      <Filter>Source Files\Addons\Entrances</Filter>
+    </ClCompile>
+    <ClCompile Include="Buildable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Building.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelAddon.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="RevolvingDoor.h">
+      <Filter>Header Files\Addons\Entrances</Filter>
+    </ClInclude>
+    <ClInclude Include="Buildable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
