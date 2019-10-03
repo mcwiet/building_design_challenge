@@ -11,7 +11,7 @@ namespace BuildingChallenge {
 	protected:
 		virtual std::string OnGetName();
 		virtual void OnBuild();
-		virtual void OnAfterBuild() = 0;
+		virtual void OnBeforeBuild() = 0;
 
 		std::string name_;
 	};

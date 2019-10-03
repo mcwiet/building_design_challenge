@@ -4,7 +4,7 @@ namespace BuildingChallenge {
 	class LevelAddon : public Level {
 	protected:
 		LevelAddon(const std::string&, Level&);
-		virtual void OnAfterBuild() override;
+		virtual void OnBeforeBuild() override;
 		Level& level_;
 	};
 }

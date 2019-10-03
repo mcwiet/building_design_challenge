@@ -11,7 +11,7 @@ namespace BuildingChallenge {
 		void AddLevel(Level&);
 
 	private:
-		virtual void OnAfterBuild() override {};
+		virtual void OnBeforeBuild() override {};
 		std::vector<std::reference_wrapper<Level>> levels_;
 	};
 }

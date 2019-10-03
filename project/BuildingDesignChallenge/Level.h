@@ -5,7 +5,7 @@ namespace BuildingChallenge {
 	public:
 		Level();
 	protected:
-		virtual void OnAfterBuild() {};
+		virtual void OnBeforeBuild() {};
 		Level(const std::string&);
 	};
 }
