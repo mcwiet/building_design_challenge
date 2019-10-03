@@ -128,14 +128,13 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="LevelAddon.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="RevolvingDoor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
     <ClInclude Include="Buildable.h" />
+    <ClInclude Include="Entrances.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelAddon.h" />
-    <ClInclude Include="RevolvingDoor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

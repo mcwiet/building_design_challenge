@@ -1,7 +1,8 @@
 #include "Building.h"
-#include "RevolvingDoor.h"
+#include "Entrances.h"
 
 using namespace BuildingChallenge;
+using namespace Addons;
 
 int main() {
 	// Create prompter
@@ -14,7 +15,12 @@ int main() {
 
 	Building b;
 	Level l;
-	RevolvingDoor r(l);
+	Entrances::RevolvingDoor r(l);
+	Entrances::GarageDoor g(r);
+
+	b.AddLevel(g);
+
+	b.Build();
 
 	return 0;
 }

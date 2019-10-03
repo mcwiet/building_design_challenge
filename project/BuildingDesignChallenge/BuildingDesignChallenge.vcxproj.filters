@@ -19,18 +19,6 @@
     <Filter Include="Source Files\Addons">
       <UniqueIdentifier>{519c6eaa-f2c2-4d9c-bd92-71c8fb86ff20}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Addons\Entrances">
-      <UniqueIdentifier>{9933a295-e109-46ae-bb6d-77add27b246b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Addons\Rooms">
-      <UniqueIdentifier>{d63547ea-211b-4add-a0d9-7efc94b524e5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Addons\Entrances">
-      <UniqueIdentifier>{e2c009d7-82f5-41f7-a922-55dba4e89d15}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Addons\Rooms">
-      <UniqueIdentifier>{54aedc65-8b4b-4f4b-815a-2df71dbc3db4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,9 +32,6 @@
     </ClCompile>
     <ClCompile Include="LevelAddon.cpp">
       <Filter>Source Files\Addons</Filter>
-    </ClCompile>
-    <ClCompile Include="RevolvingDoor.cpp">
-      <Filter>Source Files\Addons\Entrances</Filter>
     </ClCompile>
     <ClCompile Include="Buildable.cpp">
       <Filter>Source Files</Filter>
@@ -62,11 +47,11 @@
     <ClInclude Include="LevelAddon.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
-    <ClInclude Include="RevolvingDoor.h">
-      <Filter>Header Files\Addons\Entrances</Filter>
-    </ClInclude>
     <ClInclude Include="Buildable.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entrances.h">
+      <Filter>Header Files\Addons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
