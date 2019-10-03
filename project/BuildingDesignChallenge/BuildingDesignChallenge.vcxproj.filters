@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Addons">
       <UniqueIdentifier>{519c6eaa-f2c2-4d9c-bd92-71c8fb86ff20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Orders">
+      <UniqueIdentifier>{eb10c00d-d395-4816-80cc-6b2ad39ae90c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -29,9 +32,6 @@
     </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelAddon.cpp">
-      <Filter>Source Files\Addons</Filter>
     </ClCompile>
     <ClCompile Include="Buildable.cpp">
       <Filter>Source Files</Filter>
@@ -51,6 +51,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entrances.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstLevelOrder.h">
+      <Filter>Header Files\Orders</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelOrder.h">
+      <Filter>Header Files\Orders</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowFactory.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
   </ItemGroup>

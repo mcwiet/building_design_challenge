@@ -1,10 +1,9 @@
 #pragma once
 #include "Level.h"
+#include <memory>
 namespace BuildingChallenge {
-	class LevelAddon : public Level {
+	class LevelAddon : public Buildable {
 	protected:
-		LevelAddon(const std::string&, Level&);
-		virtual void OnBeforeBuild() override;
-		Level& level_;
+		LevelAddon(const std::string& name) : Buildable(name) {}
 	};
 }

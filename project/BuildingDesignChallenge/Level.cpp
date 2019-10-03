@@ -4,6 +4,12 @@
 namespace BuildingChallenge {
 	Level::Level() :
 		Buildable("Level") {}
-	Level::Level(const std::string& name) :
-		Buildable(name) {}
+	void Level::AddOn(std::shared_ptr<LevelAddon> addon) {
+		addons_.push_back(addon);
+	}
+	void Level::OnAfterBuild() {
+		for (auto addon : addons_) {
+			addon->Build();
+		}
+	}
 }

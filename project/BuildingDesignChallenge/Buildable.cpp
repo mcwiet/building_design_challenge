@@ -7,8 +7,8 @@ namespace BuildingChallenge {
 		return OnGetName();
 	}
 	void Buildable::Build() {
-		OnBeforeBuild();
 		OnBuild();
+		OnAfterBuild();
 	}
 	std::string Buildable::OnGetName() {
 		return name_;

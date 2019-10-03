@@ -5,13 +5,13 @@
 namespace BuildingChallenge {
 	class Buildable {
 	public:
-		Buildable(const std::string&);
 		std::string GetName();
 		void Build();
 	protected:
+		Buildable(const std::string&);
 		virtual std::string OnGetName();
+		virtual void OnAfterBuild() = 0;
 		virtual void OnBuild();
-		virtual void OnBeforeBuild() = 0;
 
 		std::string name_;
 	};

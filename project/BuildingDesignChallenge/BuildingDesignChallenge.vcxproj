@@ -126,7 +126,6 @@
     <ClCompile Include="Buildable.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Level.cpp" />
-    <ClCompile Include="LevelAddon.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +134,15 @@
     <ClInclude Include="Entrances.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelAddon.h" />
+    <ClInclude Include="FirstLevelOrder.h" />
+    <ClInclude Include="LevelOrder.h" />
+    <ClInclude Include="WindowFactory.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Windows.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

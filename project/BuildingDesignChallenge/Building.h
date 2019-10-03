@@ -7,11 +7,10 @@ namespace BuildingChallenge {
 	class Building : public Buildable {
 	public:
 		Building();
-		virtual void OnBuild() override;
+		virtual void OnAfterBuild() override;
 		void AddLevel(Level&);
 
 	private:
-		virtual void OnBeforeBuild() override {};
 		std::vector<std::reference_wrapper<Level>> levels_;
 	};
 }
