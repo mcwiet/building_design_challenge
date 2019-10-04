@@ -130,6 +130,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuildableFactory.h" />
     <ClInclude Include="CommandLineArchitect.h" />
     <ClInclude Include="EntranceFactory.h" />
     <ClInclude Include="Building.h" />

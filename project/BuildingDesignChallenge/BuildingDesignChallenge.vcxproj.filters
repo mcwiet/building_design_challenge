@@ -80,5 +80,8 @@
     <ClInclude Include="CommandLineArchitect.h">
       <Filter>Header Files\Architects</Filter>
     </ClInclude>
+    <ClInclude Include="BuildableFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

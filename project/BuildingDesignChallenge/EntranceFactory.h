@@ -1,31 +1,22 @@
 #pragma once
 #include "Entrances.h"
+#include "BuildableFactory.h"
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		namespace Entrances {
-			class InvalidEntranceException : public std::exception {
-			public:
-				InvalidEntranceException(const std::string& type) :
-					type_(type) {};
-				const char* what() const throw() {
-					return "Invalid entrance type";
-				}
-				const char* get_type() {
-					return type_.c_str();
-				}
-			private:
-				std::string type_;
-			};
-
-			std::shared_ptr<LevelAddon> Create(const std::string& name) {
-				for (auto it : LookupTable) {
-					auto entrance = it.second;
-					if (!_strcmpi(name.c_str(), entrance->GetName().c_str())) {
-						return entrance;
-					}
-				}
-				throw InvalidEntranceException(name);
+			namespace {
+				template<typename T>
+				class EntranceFactory : public BuildableFactory {
+					virtual T* CreateDerived() override { return new T; }
+				};
 			}
+
+			static const std::map<std::string, std::shared_ptr<BuildableFactory>, CaseInsensitiveCompare> FactoryMap = {
+				{DoubleDoor().GetName(), std::make_shared<EntranceFactory<DoubleDoor>>()},
+				{SingleDoor().GetName(), std::make_shared<EntranceFactory<SingleDoor>>()},
+				{RevolvingDoor().GetName(), std::make_shared<EntranceFactory<RevolvingDoor>>()},
+				{GarageDoor().GetName(), std::make_shared<EntranceFactory<GarageDoor>>()}
+			};
 		}
 	}
 }
