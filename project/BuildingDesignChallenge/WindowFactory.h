@@ -1,31 +1,15 @@
 #pragma once
 #include "Windows.h"
+#include "BuildableFactory.h"
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		namespace Windows {
-			class InvalidWindowException : public std::exception {
-			public:
-				InvalidWindowException(const std::string& type) :
-					type_(type) {};
-				const char* what() const throw() {
-					return "Invalid window type";
-				}
-				const char* get_type() {
-					return type_.c_str();
-				}
-			private:
-				std::string type_;
+			std::map < std::string, std::shared_ptr<AbstractBuildableFactory>> FactoryMap = {
+				{DoublePane().GetName(), std::make_shared<BuildableFactory<DoublePane>>()},
+				{SinglePane().GetName(), std::make_shared<BuildableFactory<SinglePane>>()},
+				{EnergyEfficient().GetName(), std::make_shared<BuildableFactory<EnergyEfficient>>()},
+				{StainedGlass().GetName(), std::make_shared<BuildableFactory<StainedGlass>>()}
 			};
-
-			std::shared_ptr<LevelAddon> Create(const std::string& name) {
-				for (auto it : LookupTable) {
-					auto window = it.second;
-					if (!_strcmpi(name.c_str(), window->GetName().c_str())) {
-						return window;
-					}
-				}
-				throw InvalidWindowException(name);
-			}
 		}
 	}
 }

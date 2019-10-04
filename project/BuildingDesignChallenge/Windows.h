@@ -18,13 +18,6 @@ namespace BuildingChallenge {
 			struct SinglePane : public Window { SinglePane() : Window("Single Pane") {} };
 			struct EnergyEfficient : public Window { EnergyEfficient() : Window("Energy Efficient") {} };
 			struct StainedGlass : public Window { StainedGlass() : Window("Stained Glass") {} };
-
-			static const std::map<std::type_index, std::shared_ptr<Window>> LookupTable{
-				{typeid(DoublePane()), std::make_shared<DoublePane>()},
-				{typeid(SinglePane()), std::make_shared<SinglePane>()},
-				{typeid(EnergyEfficient()), std::make_shared<EnergyEfficient>()},
-				{typeid(StainedGlass()), std::make_shared<StainedGlass>()}
-			};
 		}
 	}
 }
