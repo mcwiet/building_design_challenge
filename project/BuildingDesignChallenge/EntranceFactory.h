@@ -8,7 +8,7 @@ namespace BuildingChallenge {
 				InvalidEntranceException(const std::string& type) :
 					type_(type) {};
 				const char* what() const throw() {
-					return "Invalid Entrance type";
+					return "Invalid entrance type";
 				}
 				const char* get_type() {
 					return type_.c_str();
@@ -17,22 +17,14 @@ namespace BuildingChallenge {
 				std::string type_;
 			};
 
-			std::shared_ptr<Addons::LevelAddon> Create(const std::string& name) {
-				if (!_strcmpi(name.c_str(), DoubleDoor().GetName().c_str())) {
-					return std::make_shared<DoubleDoor>();
+			std::shared_ptr<LevelAddon> Create(const std::string& name) {
+				for (auto it : LookupTable) {
+					auto entrance = it.second;
+					if (!_strcmpi(name.c_str(), entrance->GetName().c_str())) {
+						return entrance;
+					}
 				}
-				else if (!_strcmpi(name.c_str(), SingleDoor().GetName().c_str())) {
-					return std::make_shared<SingleDoor>();
-				}
-				else if (!_strcmpi(name.c_str(), RevolvingDoor().GetName().c_str())) {
-					return std::make_shared<RevolvingDoor>();
-				}
-				else if (!_strcmpi(name.c_str(), GarageDoor().GetName().c_str())) {
-					return std::make_shared<GarageDoor>();
-				}
-				else {
-					throw InvalidEntranceException(name);
-				}
+				throw InvalidEntranceException(name);
 			}
 		}
 	}

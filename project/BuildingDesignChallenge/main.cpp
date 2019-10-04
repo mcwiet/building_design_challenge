@@ -16,25 +16,5 @@ int main() {
 	// Get remaining level Blueprints
 	//
 
-	Level l;
-	auto first = std::make_shared<Blueprints::EntranceLevelBlueprint>();
-	first->Windows = { std::make_shared<Windows::DoublePane>(), 10 };
-
-	Blueprints::StandardBuildingBlueprint Blueprint(first);
-
-	for (int i = Blueprint.GetFirstLevel()->Windows.second; i > 0; --i) {
-		l.AddOn(Blueprint.GetFirstLevel()->Windows.first);
-	}
-
-	try {
-		l.AddOn(Windows::Create("stained glass"));
-		l.AddOn(Entrances::Create("double door"));
-	}
-	catch (Windows::InvalidWindowException& e) {
-		std::cout << "Error: " << e.what() << " ('" << e.get_type() << "')" << std::endl;
-	}
-
-	l.Build();
-
 	return 0;
 }

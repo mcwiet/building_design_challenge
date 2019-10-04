@@ -17,22 +17,14 @@ namespace BuildingChallenge {
 				std::string type_;
 			};
 
-			std::shared_ptr<Addons::LevelAddon> Create(const std::string& name) {
-				if (!_strcmpi(name.c_str(), DoublePane().GetName().c_str())) {
-					return std::make_shared<DoublePane>();
+			std::shared_ptr<LevelAddon> Create(const std::string& name) {
+				for (auto it : LookupTable) {
+					auto window = it.second;
+					if (!_strcmpi(name.c_str(), window->GetName().c_str())) {
+						return window;
+					}
 				}
-				else if (!_strcmpi(name.c_str(), SinglePane().GetName().c_str())) {
-					return std::make_shared<SinglePane>();
-				}
-				else if (!_strcmpi(name.c_str(), EnergyEfficient().GetName().c_str())) {
-					return std::make_shared<EnergyEfficient>();
-				}
-				else if (!_strcmpi(name.c_str(), StainedGlass().GetName().c_str())) {
-					return std::make_shared<StainedGlass>();
-				}
-				else {
-					throw InvalidWindowException(name);
-				}
+				throw InvalidWindowException(name);
 			}
 		}
 	}

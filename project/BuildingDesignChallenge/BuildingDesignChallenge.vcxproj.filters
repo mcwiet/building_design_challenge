@@ -16,14 +16,14 @@
     <Filter Include="Header Files\Addons">
       <UniqueIdentifier>{0d6ffc8c-3b1c-43c4-8854-faa4865bc50d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Addons">
-      <UniqueIdentifier>{519c6eaa-f2c2-4d9c-bd92-71c8fb86ff20}</UniqueIdentifier>
+    <Filter Include="Header Files\Architects">
+      <UniqueIdentifier>{df593388-2347-4792-92c4-038116977a6a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Orders">
+    <Filter Include="Header Files\Blueprints">
       <UniqueIdentifier>{eb10c00d-d395-4816-80cc-6b2ad39ae90c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Prompters">
-      <UniqueIdentifier>{df593388-2347-4792-92c4-038116977a6a}</UniqueIdentifier>
+    <Filter Include="Source Files\Architects">
+      <UniqueIdentifier>{022e8baf-7ae0-4a27-820b-58d9bb87250b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="Buildable.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLineArchitect.cpp">
+      <Filter>Source Files\Architects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,13 +69,16 @@
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
     <ClInclude Include="StandardBuildingBlueprint.h">
-      <Filter>Header Files\Orders</Filter>
+      <Filter>Header Files\Blueprints</Filter>
     </ClInclude>
     <ClInclude Include="EntranceLevelBlueprint.h">
-      <Filter>Header Files\Orders</Filter>
+      <Filter>Header Files\Blueprints</Filter>
     </ClInclude>
     <ClInclude Include="LevelBlueprint.h">
-      <Filter>Header Files\Orders</Filter>
+      <Filter>Header Files\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandLineArchitect.h">
+      <Filter>Header Files\Architects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 #include "Level.h"
 #include <memory>
 namespace BuildingChallenge {
-	namespace Addons {
+	namespace LevelAddons {
 		class LevelAddon : public Buildable {
 		protected:
 			LevelAddon(const std::string& name) : Buildable(name) {}

@@ -125,10 +125,12 @@
   <ItemGroup>
     <ClCompile Include="Buildable.cpp" />
     <ClCompile Include="Building.cpp" />
+    <ClCompile Include="CommandLineArchitect.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommandLineArchitect.h" />
     <ClInclude Include="EntranceFactory.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Buildable.h" />
