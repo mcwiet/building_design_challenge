@@ -53,9 +53,6 @@
     <ClInclude Include="Entrances.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
-    <ClInclude Include="FirstLevelOrder.h">
-      <Filter>Header Files\Orders</Filter>
-    </ClInclude>
     <ClInclude Include="LevelOrder.h">
       <Filter>Header Files\Orders</Filter>
     </ClInclude>
@@ -64,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="WindowFactory.h">
       <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="EntranceFactory.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="EntranceLevelOrder.h">
+      <Filter>Header Files\Orders</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardBuildingOrder.h">
+      <Filter>Header Files\Orders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

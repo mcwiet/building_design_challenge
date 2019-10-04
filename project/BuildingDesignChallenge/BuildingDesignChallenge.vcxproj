@@ -129,13 +129,15 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EntranceFactory.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Buildable.h" />
     <ClInclude Include="Entrances.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelAddon.h" />
-    <ClInclude Include="FirstLevelOrder.h" />
+    <ClInclude Include="EntranceLevelOrder.h" />
     <ClInclude Include="LevelOrder.h" />
+    <ClInclude Include="StandardBuildingOrder.h" />
     <ClInclude Include="WindowFactory.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </ExcludedFromBuild>

@@ -33,9 +33,6 @@ namespace BuildingChallenge {
 				else {
 					throw InvalidWindowException(name);
 				}
-
-				DoublePane d;
-				return std::make_shared<DoublePane>(d);
 			}
 		}
 	}

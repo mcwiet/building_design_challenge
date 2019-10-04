@@ -1,15 +1,21 @@
-//#pragma once
-//#include "LevelAddon.h"
-//
-//namespace BuildingChallenge {
-//	namespace Addons {
-//		namespace Entrances {
-//			struct Entrance : public LevelAddon { Entrance(const std::string& name, Level& level) : LevelAddon(name, level) {} };
-//
-//			struct DoubleDoor : public Entrance { DoubleDoor(Level& level) : Entrance("Double Door", level) {} };
-//			struct SingleDoor : public Entrance { SingleDoor(Level& level) : Entrance("Single Door", level) {} };
-//			struct RevolvingDoor : public Entrance { RevolvingDoor(Level& level) : Entrance("Revolving Door", level) {} };
-//			struct GarageDoor : public Entrance { GarageDoor(Level& level) : Entrance("Garage Door", level) {} };
-//		}
-//	}
-//}
+#pragma once
+#include "LevelAddon.h"
+namespace BuildingChallenge {
+	namespace LevelAddons {
+		namespace Entrances {
+			class Entrance : public LevelAddon {
+			protected:
+				Entrance(const std::string& name) : LevelAddon(name) {}
+				virtual void OnAfterBuild() override {};
+				virtual void OnBuild() override {
+					std::cout << "Building " << name_ << " Entrance..." << std::endl;
+				}
+			};
+
+			struct DoubleDoor : public Entrance { DoubleDoor() : Entrance("Double Door") {} };
+			struct SingleDoor : public Entrance { SingleDoor() : Entrance("Single Door") {} };
+			struct RevolvingDoor : public Entrance { RevolvingDoor() : Entrance("Revolving Door") {} };
+			struct GarageDoor : public Entrance { GarageDoor() : Entrance("Garage Door") {} };
+		}
+	}
+}

@@ -6,11 +6,11 @@ namespace BuildingChallenge {
 
 	void Building::OnAfterBuild() {
 		for (auto level : levels_) {
-			level.get().Build();
+			level->Build();
 		}
 	}
 
-	void Building::AddLevel(Level& level) {
-		levels_.push_back(std::reference_wrapper<Level>(level));
+	void Building::AddLevel(std::shared_ptr<Level> level) {
+		levels_.push_back(std::shared_ptr<Level>(level));
 	}
 }
