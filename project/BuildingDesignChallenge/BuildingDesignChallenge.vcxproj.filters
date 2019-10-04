@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Orders">
       <UniqueIdentifier>{eb10c00d-d395-4816-80cc-6b2ad39ae90c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Prompters">
+      <UniqueIdentifier>{df593388-2347-4792-92c4-038116977a6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,9 +56,6 @@
     <ClInclude Include="Entrances.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
-    <ClInclude Include="LevelOrder.h">
-      <Filter>Header Files\Orders</Filter>
-    </ClInclude>
     <ClInclude Include="Windows.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
@@ -65,10 +65,13 @@
     <ClInclude Include="EntranceFactory.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
-    <ClInclude Include="EntranceLevelOrder.h">
+    <ClInclude Include="StandardBuildingBlueprint.h">
       <Filter>Header Files\Orders</Filter>
     </ClInclude>
-    <ClInclude Include="StandardBuildingOrder.h">
+    <ClInclude Include="EntranceLevelBlueprint.h">
+      <Filter>Header Files\Orders</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBlueprint.h">
       <Filter>Header Files\Orders</Filter>
     </ClInclude>
   </ItemGroup>

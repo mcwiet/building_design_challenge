@@ -17,7 +17,7 @@ namespace BuildingChallenge {
 				std::string type_;
 			};
 
-			std::shared_ptr<LevelAddon> Create(const std::string& name) {
+			std::shared_ptr<Addons::LevelAddon> Create(const std::string& name) {
 				if (!_strcmpi(name.c_str(), DoubleDoor().GetName().c_str())) {
 					return std::make_shared<DoubleDoor>();
 				}

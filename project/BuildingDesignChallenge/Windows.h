@@ -4,9 +4,9 @@
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		namespace Windows {
-			class Window : public LevelAddon {
+			class Window : public Addons::LevelAddon {
 			protected:
-				Window(const std::string& name) : LevelAddon(name) {}
+				Window(const std::string& name) : Addons::LevelAddon(name) {}
 				virtual void OnBuild() override {
 					std::cout << "Building " << name_ << " Window..." << std::endl;
 				}

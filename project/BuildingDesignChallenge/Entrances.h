@@ -3,7 +3,7 @@
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		namespace Entrances {
-			class Entrance : public LevelAddon {
+			class Entrance : public Addons::LevelAddon {
 			protected:
 				Entrance(const std::string& name) : LevelAddon(name) {}
 				virtual void OnAfterBuild() override {};

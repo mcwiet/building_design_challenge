@@ -1,6 +1,6 @@
 #include "Building.h"
-#include "LevelOrder.h"
-#include "StandardBuildingOrder.h"
+#include "LevelBlueprint.h"
+#include "StandardBuildingBlueprint.h"
 #include "WindowFactory.h"
 #include "EntranceFactory.h"
 
@@ -11,19 +11,19 @@ int main() {
 	// Create prompter
 	// Create level builder
 	// Start prompter
-	// Get first level order
+	// Get first level Blueprint
 	// Build first level
-	// Get remaining level orders
+	// Get remaining level Blueprints
 	//
 
 	Level l;
-	auto first = std::make_shared<Orders::EntranceLevelOrder>();
-	first->WindowOrder = { std::make_shared<Windows::DoublePane>(), 10 };
+	auto first = std::make_shared<Blueprints::EntranceLevelBlueprint>();
+	first->Windows = { std::make_shared<Windows::DoublePane>(), 10 };
 
-	Orders::StandardBuildingOrder order(first);
+	Blueprints::StandardBuildingBlueprint Blueprint(first);
 
-	for (int i = order.GetFirstLevel()->WindowOrder.second; i > 0; --i) {
-		l.AddOn(order.GetFirstLevel()->WindowOrder.first);
+	for (int i = Blueprint.GetFirstLevel()->Windows.second; i > 0; --i) {
+		l.AddOn(Blueprint.GetFirstLevel()->Windows.first);
 	}
 
 	try {
