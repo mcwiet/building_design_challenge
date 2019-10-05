@@ -1,7 +1,5 @@
 #pragma once
 #include "LevelAddon.h"
-#include <map>
-#include <typeindex>
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		namespace Windows {

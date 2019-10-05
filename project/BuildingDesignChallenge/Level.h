@@ -8,8 +8,9 @@ namespace BuildingChallenge {
 	public:
 		Level();
 		void AddOn(std::shared_ptr<LevelAddons::LevelAddon>);
-		virtual void OnAfterBuild() override;
 	private:
+		virtual void OnAfterBuild() override;
+
 		std::vector<std::shared_ptr<LevelAddons::LevelAddon>> addons_;
 	};
 }

@@ -47,9 +47,6 @@
     <ClInclude Include="Building.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LevelAddon.h">
       <Filter>Header Files\Addons</Filter>
     </ClInclude>
@@ -81,6 +78,9 @@
       <Filter>Header Files\Architects</Filter>
     </ClInclude>
     <ClInclude Include="BuildableFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
