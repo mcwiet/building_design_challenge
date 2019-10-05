@@ -1,6 +1,6 @@
 #pragma once
-#include "Level.h"
-#include <memory>
+#include "Buildable.h"
+#include <string>
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		class LevelAddon : public Buildable {
