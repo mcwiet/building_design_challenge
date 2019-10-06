@@ -27,6 +27,10 @@ namespace BuildingChallenge {
 
 	template<typename T>
 	class BuildableFactory : public AbstractBuildableFactory {
+	public:
+		virtual ~BuildableFactory() = default;
+		std::shared_ptr<T> Create() { return std::shared_ptr<T>(CreateDerived()); }
+	private:
 		virtual T* CreateDerived() override { return new T; }
 	};
 }

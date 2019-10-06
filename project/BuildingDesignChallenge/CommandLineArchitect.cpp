@@ -8,20 +8,27 @@ namespace BuildingChallenge {
 	namespace Architects {
 		std::shared_ptr<Blueprints::StandardBuildingBlueprint> CommandLineArchitect::DesignStandardBuilding() {
 			unsigned levels = GetNumberOfLevels();
-			auto building = std::make_shared<Blueprints::StandardBuildingBlueprint>(GetEntranceLevelBlueprint(1));
+			auto bp = std::make_shared<Blueprints::StandardBuildingBlueprint>(GetEntranceLevelBlueprint(1));
 			for (unsigned level = 2; level <= levels; ++level) {
-				building->AddLevelBlueprint(GetLevelBlueprint(level));
+				bp->AddLevelBlueprint(GetLevelBlueprint(level));
 			}
-			return building;
+			return bp;
 		}
 
 		std::shared_ptr<Blueprints::EntranceLevelBlueprint> CommandLineArchitect::GetEntranceLevelBlueprint(unsigned level) {
 			auto bp = std::make_shared<Blueprints::EntranceLevelBlueprint>();
+			auto entrances = GetAddon(level, "Entrance", false, LevelAddons::Entrances::FactoryMap);
+			auto windows = GetAddon(level, "Window", true, LevelAddons::Windows::FactoryMap);
+			bp->Entrances = { std::dynamic_pointer_cast<LevelAddons::Entrances::Entrance>(entrances.first), entrances.second };
+			bp->Windows = { std::dynamic_pointer_cast<LevelAddons::Windows::Window>(windows.first), windows.second };
 			return bp;
 		}
 
 		std::shared_ptr<Blueprints::LevelBlueprint> CommandLineArchitect::GetLevelBlueprint(unsigned level) {
-			return nullptr;
+			auto bp = std::make_shared<Blueprints::LevelBlueprint>();
+			auto windows = GetAddon(level, "Window", true, LevelAddons::Windows::FactoryMap);
+			bp->Windows = { std::dynamic_pointer_cast<LevelAddons::Windows::Window>(windows.first), windows.second };
+			return bp;
 		}
 
 		std::pair<std::shared_ptr<Buildable>, unsigned> CommandLineArchitect::GetAddon(
@@ -38,8 +45,8 @@ namespace BuildingChallenge {
 			std::cout << "Level " << level << ": " << addon_type << " Options: ";
 			for (auto pair : factory_map) { std::cout << pair.first << ", "; }
 
-			bool valid = false;
-			while (!valid) {
+			bool need_style = (addon.second == 0) && (!zero_valid);
+			while (need_style) {
 				std::cout << std::endl << "Level " << level << ": ";
 				std::string input = GetUserInput();
 				auto it = factory_map.find(input);
@@ -48,7 +55,7 @@ namespace BuildingChallenge {
 				}
 				else {
 					addon.first = it->second->Create();
-					valid = true;
+					need_style = false;
 				}
 			}
 

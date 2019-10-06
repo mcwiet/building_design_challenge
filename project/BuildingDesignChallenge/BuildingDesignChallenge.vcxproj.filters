@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Architects">
       <UniqueIdentifier>{022e8baf-7ae0-4a27-820b-58d9bb87250b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\BlueprintBuilders">
+      <UniqueIdentifier>{8067a8f3-dfb6-4114-a84e-27ec6e2ee68d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Builders">
+      <UniqueIdentifier>{271628e6-ab77-4f9a-bd5d-42922887d997}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -82,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="Level.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBlueprintBuilder.h">
+      <Filter>Header Files\Builders</Filter>
+    </ClInclude>
+    <ClInclude Include="EntranceLevelBlueprintBuilder.h">
+      <Filter>Header Files\Builders</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardBuildingBlueprintBuilder.h">
+      <Filter>Header Files\Builders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

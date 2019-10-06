@@ -135,12 +135,15 @@
     <ClInclude Include="EntranceFactory.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Buildable.h" />
+    <ClInclude Include="EntranceLevelBlueprintBuilder.h" />
     <ClInclude Include="Entrances.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelAddon.h" />
     <ClInclude Include="EntranceLevelBlueprint.h" />
     <ClInclude Include="LevelBlueprint.h" />
+    <ClInclude Include="LevelBlueprintBuilder.h" />
     <ClInclude Include="StandardBuildingBlueprint.h" />
+    <ClInclude Include="StandardBuildingBlueprintBuilder.h" />
     <ClInclude Include="WindowFactory.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </ExcludedFromBuild>
