@@ -1,12 +1,13 @@
 #pragma once
 #include "EntranceLevelBlueprint.h"
 #include "Level.h"
+#include <memory>
 
 namespace BuildingChallenge {
 	namespace Builders {
 		class EntranceLevelBuilder {
 		public:
-			std::shared_ptr<Level> Build(std::shared_ptr<Blueprints::EntranceLevelBlueprint>);
+			std::shared_ptr<Level> Build(const std::shared_ptr<const Blueprints::EntranceLevelBlueprint>);
 		};
 	}
 }

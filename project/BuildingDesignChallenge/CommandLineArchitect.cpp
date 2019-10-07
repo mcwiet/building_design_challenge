@@ -45,7 +45,7 @@ namespace BuildingChallenge {
 			std::cout << "Level " << level << ": " << addon_type << " Options: ";
 			for (auto pair : factory_map) { std::cout << pair.first << ", "; }
 
-			bool need_style = (addon.second == 0) && (!zero_valid);
+			bool need_style = (addon.second != 0) || (addon.second == 0) && (!zero_valid);
 			while (need_style) {
 				std::cout << std::endl << "Level " << level << ": ";
 				std::string input = GetUserInput();

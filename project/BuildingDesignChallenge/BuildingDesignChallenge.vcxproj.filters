@@ -48,6 +48,15 @@
     <ClCompile Include="CommandLineArchitect.cpp">
       <Filter>Source Files\Architects</Filter>
     </ClCompile>
+    <ClCompile Include="EntranceLevelBuilder.cpp">
+      <Filter>Source Files\BlueprintBuilders</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelBuilder.cpp">
+      <Filter>Source Files\BlueprintBuilders</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardBuildingBuilder.cpp">
+      <Filter>Source Files\BlueprintBuilders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h">
@@ -89,13 +98,13 @@
     <ClInclude Include="Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LevelBlueprintBuilder.h">
+    <ClInclude Include="EntranceLevelBuilder.h">
       <Filter>Header Files\Builders</Filter>
     </ClInclude>
-    <ClInclude Include="EntranceLevelBlueprintBuilder.h">
+    <ClInclude Include="LevelBuilder.h">
       <Filter>Header Files\Builders</Filter>
     </ClInclude>
-    <ClInclude Include="StandardBuildingBlueprintBuilder.h">
+    <ClInclude Include="StandardBuildingBuilder.h">
       <Filter>Header Files\Builders</Filter>
     </ClInclude>
   </ItemGroup>

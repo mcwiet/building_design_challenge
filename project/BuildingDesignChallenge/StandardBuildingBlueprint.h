@@ -23,11 +23,11 @@ namespace BuildingChallenge {
 				additional_levels_.push_back(level);
 			}
 
-			const std::shared_ptr<const EntranceLevelBlueprint> GetFirstLevel() {
+			const std::shared_ptr<const EntranceLevelBlueprint> GetFirstLevel() const {
 				return first_level_;
 			}
 
-			const std::vector<std::shared_ptr<const LevelBlueprint>>& GetAdditionalLevels() {
+			const std::vector<std::shared_ptr<const LevelBlueprint>>& GetAdditionalLevels() const {
 				return additional_levels_;
 			}
 
