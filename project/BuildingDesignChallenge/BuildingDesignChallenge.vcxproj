@@ -145,6 +145,8 @@
     <ClInclude Include="EntranceLevelBlueprint.h" />
     <ClInclude Include="LevelBlueprint.h" />
     <ClInclude Include="LevelBuilder.h" />
+    <ClInclude Include="RoomFactory.h" />
+    <ClInclude Include="Rooms.h" />
     <ClInclude Include="StandardBuildingBlueprint.h" />
     <ClInclude Include="StandardBuildingBuilder.h" />
     <ClInclude Include="WindowFactory.h">

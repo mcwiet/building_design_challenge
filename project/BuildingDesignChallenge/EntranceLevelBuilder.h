@@ -8,6 +8,7 @@ namespace BuildingChallenge {
 		class EntranceLevelBuilder {
 		public:
 			std::shared_ptr<Level> Build(const std::shared_ptr<const Blueprints::EntranceLevelBlueprint>);
+			void Build(const std::shared_ptr<const Blueprints::EntranceLevelBlueprint>, const std::shared_ptr<Level>);
 		};
 	}
 }
