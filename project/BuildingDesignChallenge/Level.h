@@ -7,10 +7,10 @@ namespace BuildingChallenge {
 	class Level : public Buildable {
 	public:
 		Level();
-		void AddOn(std::shared_ptr<LevelAddons::LevelAddon>);
+		void AddOn(std::unique_ptr<LevelAddons::LevelAddon>);
 	private:
 		virtual void OnAfterBuild() override;
 
-		std::vector<std::shared_ptr<LevelAddons::LevelAddon>> addons_;
+		std::vector<std::unique_ptr<LevelAddons::LevelAddon>> addons_;
 	};
 }

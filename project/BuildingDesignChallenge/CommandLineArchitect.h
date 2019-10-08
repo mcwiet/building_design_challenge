@@ -2,19 +2,20 @@
 #include "StandardBuildingBlueprint.h"
 #include "EntranceLevelBlueprint.h"
 #include "LevelBlueprint.h"
-#include "BuildableFactory.h"
+#include "Factory.h"
 
 namespace BuildingChallenge {
 	namespace Architects {
 		class CommandLineArchitect {
 		public:
-			std::shared_ptr<Blueprints::StandardBuildingBlueprint> DesignStandardBuilding();
+			Blueprints::StandardBuildingBlueprint DesignStandardBuilding();
 
 		private:
-			std::shared_ptr<Blueprints::EntranceLevelBlueprint> GetEntranceLevelBlueprint(unsigned);
-			std::shared_ptr<Blueprints::LevelBlueprint> GetLevelBlueprint(unsigned);
-			std::pair<std::shared_ptr<Buildable>, unsigned> GetAddon(unsigned, std::string, bool,
-				const std::map<std::string, std::shared_ptr<AbstractBuildableFactory>, CaseInsensitiveCompare>&);
+			Blueprints::EntranceLevelBlueprint GetEntranceLevelBlueprint(unsigned);
+			Blueprints::LevelBlueprint GetLevelBlueprint(unsigned);
+			template <typename T>
+			Blueprints::Blueprint<T> GetAddon(unsigned, std::string, bool,
+				const std::map<std::string, std::shared_ptr<AbstractFactory<T>>, CaseInsensitiveCompare>&);
 			unsigned GetNumberOfLevels();
 			unsigned GetPositiveValue(bool zero_valid);
 			std::string GetUserInput();

@@ -4,11 +4,11 @@
 
 namespace BuildingChallenge {
 	namespace Builders {
-		std::shared_ptr<Building> StandardBuildingBuilder::Build(const std::shared_ptr<const Blueprints::StandardBuildingBlueprint> bp) {
-			auto bldg = std::make_shared<Building>();
-			bldg->AddLevel(EntranceLevelBuilder().Build(bp->GetFirstLevel()));
-			for (auto level : bp->GetAdditionalLevels()) {
-				bldg->AddLevel(LevelBuilder().Build(level));
+		Building StandardBuildingBuilder::Build(const Blueprints::StandardBuildingBlueprint& bp) {
+			Building bldg;
+			bldg.AddLevel(std::make_unique<Level>(EntranceLevelBuilder().Build(bp.GetFirstLevel())));
+			for (auto level : bp.GetAdditionalLevels()) {
+				bldg.AddLevel(std::make_unique<Level>(LevelBuilder().Build(level)));
 			}
 			return bldg;
 		}

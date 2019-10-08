@@ -1,14 +1,14 @@
 #pragma once
 #include "Windows.h"
-#include "BuildableFactory.h"
+#include "Factory.h"
 namespace BuildingChallenge {
 	namespace LevelAddons {
 		namespace Windows {
-			static const std::map<std::string, std::shared_ptr<AbstractBuildableFactory>, CaseInsensitiveCompare> FactoryMap = {
-				{DoublePane().GetName(), std::make_shared<BuildableFactory<DoublePane>>()},
-				{SinglePane().GetName(), std::make_shared<BuildableFactory<SinglePane>>()},
-				{EnergyEfficient().GetName(), std::make_shared<BuildableFactory<EnergyEfficient>>()},
-				{StainedGlass().GetName(), std::make_shared<BuildableFactory<StainedGlass>>()}
+			static const std::map<std::string, std::shared_ptr<AbstractFactory<Window>>, CaseInsensitiveCompare> FactoryMap = {
+				{DoublePane().GetName(), std::make_shared<Factory<Window, DoublePane>>()},
+				{SinglePane().GetName(), std::make_shared<Factory<Window, SinglePane>>()},
+				{EnergyEfficient().GetName(), std::make_shared<Factory<Window, EnergyEfficient>>()},
+				{StainedGlass().GetName(), std::make_shared<Factory<Window, StainedGlass>>()}
 			};
 		}
 	}

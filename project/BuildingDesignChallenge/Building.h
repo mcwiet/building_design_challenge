@@ -8,9 +8,9 @@ namespace BuildingChallenge {
 	public:
 		Building();
 		virtual void OnAfterBuild() override;
-		void AddLevel(std::shared_ptr<Level>);
+		void AddLevel(std::unique_ptr<Level>);
 
 	private:
-		std::vector<std::shared_ptr<Level>> levels_;
+		std::vector<std::unique_ptr<Level>> levels_;
 	};
 }

@@ -6,8 +6,8 @@ namespace BuildingChallenge {
 	namespace Builders {
 		class LevelBuilder {
 		public:
-			std::shared_ptr<Level> Build(const std::shared_ptr<const Blueprints::LevelBlueprint>);
-			void Build(const std::shared_ptr<const Blueprints::LevelBlueprint>, const std::shared_ptr<Level>);
+			Level Build(const Blueprints::LevelBlueprint&);
+			void Build(const Blueprints::LevelBlueprint&, Level&);
 		};
 	}
 }

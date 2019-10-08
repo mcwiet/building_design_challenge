@@ -130,19 +130,21 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="LevelBuilder.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="StandardBuildingBlueprint.cpp" />
     <ClCompile Include="StandardBuildingBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BuildableFactory.h" />
+    <ClInclude Include="Blueprint.h" />
     <ClInclude Include="CommandLineArchitect.h" />
     <ClInclude Include="EntranceFactory.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Buildable.h" />
+    <ClInclude Include="EntranceLevelBlueprint.h" />
     <ClInclude Include="EntranceLevelBuilder.h" />
     <ClInclude Include="Entrances.h" />
+    <ClInclude Include="Factory.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelAddon.h" />
-    <ClInclude Include="EntranceLevelBlueprint.h" />
     <ClInclude Include="LevelBlueprint.h" />
     <ClInclude Include="LevelBuilder.h" />
     <ClInclude Include="RoomFactory.h" />

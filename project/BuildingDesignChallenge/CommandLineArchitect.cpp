@@ -7,53 +7,49 @@
 
 namespace BuildingChallenge {
 	namespace Architects {
-		std::shared_ptr<Blueprints::StandardBuildingBlueprint> CommandLineArchitect::DesignStandardBuilding() {
+		Blueprints::StandardBuildingBlueprint CommandLineArchitect::DesignStandardBuilding() {
 			unsigned levels = GetNumberOfLevels();
-			auto bp = std::make_shared<Blueprints::StandardBuildingBlueprint>(GetEntranceLevelBlueprint(1));
+			Blueprints::StandardBuildingBlueprint bp(GetEntranceLevelBlueprint(1));
 			std::cout << "------------LEVEL 1 COMPLETE!------------" << std::endl;
 			for (unsigned level = 2; level <= levels; ++level) {
-				bp->AddLevelBlueprint(GetLevelBlueprint(level));
+				bp.AddLevelBlueprint(GetLevelBlueprint(level));
 				std::cout << "------------LEVEL " << level << " COMPLETE!------------" << std::endl;
 			}
 			return bp;
 		}
 
-		std::shared_ptr<Blueprints::EntranceLevelBlueprint> CommandLineArchitect::GetEntranceLevelBlueprint(unsigned level) {
-			auto bp = std::make_shared<Blueprints::EntranceLevelBlueprint>();
-			auto entrances = GetAddon(level, "Entrance", false, LevelAddons::Entrances::FactoryMap);
-			auto windows = GetAddon(level, "Window", true, LevelAddons::Windows::FactoryMap);
-			auto rooms = GetAddon(level, "Room", false, LevelAddons::Rooms::FactoryMap);
-			bp->Entrances = { std::dynamic_pointer_cast<LevelAddons::Entrances::Entrance>(entrances.first), entrances.second };
-			bp->Windows = { std::dynamic_pointer_cast<LevelAddons::Windows::Window>(windows.first), windows.second };
-			bp->Rooms = { std::dynamic_pointer_cast<LevelAddons::Rooms::Room>(rooms.first), rooms.second };
+		Blueprints::EntranceLevelBlueprint CommandLineArchitect::GetEntranceLevelBlueprint(unsigned level) {
+			Blueprints::EntranceLevelBlueprint bp;
+			bp.Entrances = GetAddon<LevelAddons::Entrances::Entrance>(level, "Entrance", false, LevelAddons::Entrances::FactoryMap);
+			bp.Windows = GetAddon<LevelAddons::Windows::Window>(level, "Window", true, LevelAddons::Windows::FactoryMap);
+			bp.Rooms = GetAddon<LevelAddons::Rooms::Room>(level, "Room", false, LevelAddons::Rooms::FactoryMap);
 			return bp;
 		}
 
-		std::shared_ptr<Blueprints::LevelBlueprint> CommandLineArchitect::GetLevelBlueprint(unsigned level) {
-			auto bp = std::make_shared<Blueprints::LevelBlueprint>();
-			auto windows = GetAddon(level, "Window", true, LevelAddons::Windows::FactoryMap);
-			auto rooms = GetAddon(level, "Room", false, LevelAddons::Rooms::FactoryMap);
-			bp->Windows = { std::dynamic_pointer_cast<LevelAddons::Windows::Window>(windows.first), windows.second };
-			bp->Rooms = { std::dynamic_pointer_cast<LevelAddons::Rooms::Room>(rooms.first), rooms.second };
+		Blueprints::LevelBlueprint CommandLineArchitect::GetLevelBlueprint(unsigned level) {
+			Blueprints::LevelBlueprint bp;
+			bp.Windows = GetAddon<LevelAddons::Windows::Window>(level, "Window", true, LevelAddons::Windows::FactoryMap);
+			bp.Rooms = GetAddon<LevelAddons::Rooms::Room>(level, "Room", false, LevelAddons::Rooms::FactoryMap);
 			return bp;
 		}
 
-		std::pair<std::shared_ptr<Buildable>, unsigned> CommandLineArchitect::GetAddon(
+		template <typename T>
+		Blueprints::Blueprint<T> CommandLineArchitect::GetAddon(
 			unsigned level,
 			std::string addon_type,
 			bool zero_valid,
-			const std::map<std::string, std::shared_ptr<AbstractBuildableFactory>, CaseInsensitiveCompare>& factory_map)
+			const std::map<std::string, std::shared_ptr<AbstractFactory<T>>, CaseInsensitiveCompare>& factory_map)
 		{
-			std::pair<std::shared_ptr<Buildable>, unsigned> addon;
+			Blueprints::Blueprint<T> addon;
 
 			std::cout << "Level " << level << ": " << addon_type << " Options: How many?" << std::endl;
 			std::cout << "Level " << level << ": " << addon_type << " Options: ";
-			addon.second = GetPositiveValue(zero_valid);
+			addon.Amount = GetPositiveValue(zero_valid);
 			std::cout << "Level " << level << ": " << addon_type << " Options: What style would you like to use?" << std::endl;
 			std::cout << "Level " << level << ": " << addon_type << " Options: ";
 			for (auto pair : factory_map) { std::cout << pair.first << ", "; }
 
-			bool need_style = (addon.second != 0) || (addon.second == 0) && (!zero_valid);
+			bool need_style = (addon.Amount != 0) || (addon.Amount == 0) && (!zero_valid);
 			while (need_style) {
 				std::cout << std::endl;
 				std::cout << "Level " << level << ": " << addon_type << " Options: ";
@@ -63,7 +59,7 @@ namespace BuildingChallenge {
 					std::cout << "That style is not valid. Please select a valid style.";
 				}
 				else {
-					addon.first = it->second->Create();
+					addon.Factory = it->second;
 					need_style = false;
 				}
 			}

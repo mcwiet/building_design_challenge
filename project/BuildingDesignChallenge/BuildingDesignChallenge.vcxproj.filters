@@ -31,6 +31,9 @@
     <Filter Include="Header Files\Builders">
       <UniqueIdentifier>{271628e6-ab77-4f9a-bd5d-42922887d997}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Blueprints">
+      <UniqueIdentifier>{b87396b9-e18f-4027-8bc4-3bb813505e65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="StandardBuildingBuilder.cpp">
       <Filter>Source Files\BlueprintBuilders</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardBuildingBlueprint.cpp">
+      <Filter>Source Files\Blueprints</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,17 +89,8 @@
     <ClInclude Include="StandardBuildingBlueprint.h">
       <Filter>Header Files\Blueprints</Filter>
     </ClInclude>
-    <ClInclude Include="EntranceLevelBlueprint.h">
-      <Filter>Header Files\Blueprints</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelBlueprint.h">
-      <Filter>Header Files\Blueprints</Filter>
-    </ClInclude>
     <ClInclude Include="CommandLineArchitect.h">
       <Filter>Header Files\Architects</Filter>
-    </ClInclude>
-    <ClInclude Include="BuildableFactory.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Level.h">
       <Filter>Header Files</Filter>
@@ -112,6 +109,18 @@
     </ClInclude>
     <ClInclude Include="RoomFactory.h">
       <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="Blueprint.h">
+      <Filter>Header Files\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="EntranceLevelBlueprint.h">
+      <Filter>Header Files\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBlueprint.h">
+      <Filter>Header Files\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

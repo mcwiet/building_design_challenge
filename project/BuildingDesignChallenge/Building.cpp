@@ -5,12 +5,12 @@ namespace BuildingChallenge {
 		Buildable("Building") {};
 
 	void Building::OnAfterBuild() {
-		for (auto level : levels_) {
+		for (auto& level : levels_) {
 			level->Build();
 		}
 	}
 
-	void Building::AddLevel(std::shared_ptr<Level> level) {
-		levels_.push_back(std::shared_ptr<Level>(level));
+	void Building::AddLevel(std::unique_ptr<Level> level) {
+		levels_.push_back(std::move(level));
 	}
 }

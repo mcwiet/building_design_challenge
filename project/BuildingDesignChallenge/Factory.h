@@ -1,5 +1,4 @@
 #pragma once
-#include "Buildable.h"
 #include <string>
 #include <map>
 #include <memory>
@@ -16,21 +15,22 @@ namespace BuildingChallenge {
 		}
 	};
 
-	class AbstractBuildableFactory {
+	template<typename Base>
+	class AbstractFactory {
 	public:
-		virtual ~AbstractBuildableFactory() = default;
-		std::shared_ptr<Buildable> Create() { return std::shared_ptr<Buildable>(CreateDerived()); }
+		virtual ~AbstractFactory() = default;
+		std::unique_ptr<Base> Create() { return std::unique_ptr<Base>(CreateDerived()); }
 
 	protected:
-		virtual Buildable* CreateDerived() = 0;
+		virtual Base* CreateDerived() = 0;
 	};
 
-	template<typename T>
-	class BuildableFactory : public AbstractBuildableFactory {
+	template<typename Base, typename Derived>
+	class Factory : public AbstractFactory<Base> {
 	public:
-		virtual ~BuildableFactory() = default;
-		std::shared_ptr<T> Create() { return std::shared_ptr<T>(CreateDerived()); }
+		virtual ~Factory() = default;
+		std::unique_ptr<Derived> Create() { return std::unique_ptr<Derived>(CreateDerived()); }
 	private:
-		virtual T* CreateDerived() override { return new T; }
+		virtual Derived* CreateDerived() override { return new Derived; }
 	};
 }

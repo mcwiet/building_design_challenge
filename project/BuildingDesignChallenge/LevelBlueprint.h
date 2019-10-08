@@ -1,12 +1,15 @@
 #pragma once
 #include "Windows.h"
 #include "Rooms.h"
+#include "Blueprint.h"
 
 namespace BuildingChallenge {
 	namespace Blueprints {
 		struct LevelBlueprint {
-			std::pair<std::shared_ptr<LevelAddons::Windows::Window>, unsigned> Windows;
-			std::pair<std::shared_ptr<LevelAddons::Rooms::Room>, unsigned> Rooms;
+			LevelBlueprint() = default;
+			virtual ~LevelBlueprint() = default;
+			Blueprint<LevelAddons::Windows::Window> Windows;
+			Blueprint<LevelAddons::Rooms::Room> Rooms;
 		};
 	}
 }
