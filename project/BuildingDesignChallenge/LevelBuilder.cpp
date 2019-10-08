@@ -1,4 +1,5 @@
 #include "LevelBuilder.h"
+#include "Clone.h"
 
 namespace BuildingChallenge {
 	namespace Builders {
@@ -10,10 +11,10 @@ namespace BuildingChallenge {
 
 		void LevelBuilder::Build(const Blueprints::LevelBlueprint& bp, Level& level) {
 			for (unsigned i = 0; i < bp.Windows.Amount; ++i) {
-				level.AddOn(bp.Windows.Factory.lock()->Create());
+				level.AddOn(Clone(&bp.Windows.Item));
 			}
 			for (unsigned i = 0; i < bp.Rooms.Amount; ++i) {
-				level.AddOn(bp.Rooms.Factory.lock()->Create());
+				level.AddOn(Clone(&bp.Rooms.Item));
 			}
 			level.Build();
 		}

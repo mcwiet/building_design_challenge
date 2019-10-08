@@ -1,11 +1,11 @@
 #pragma once
 #include "LevelBlueprint.h"
-#include "Entrances.h"
+#include "Entrance.h"
 
 namespace BuildingChallenge {
 	namespace Blueprints {
 		struct EntranceLevelBlueprint : public LevelBlueprint {
-			Blueprint<LevelAddons::Entrances::Entrance> Entrances;
+			Blueprint<LevelAddons::Entrance> Entrances;
 		};
 	}
 }

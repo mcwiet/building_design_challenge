@@ -1,6 +1,6 @@
 #pragma once
-#include "Windows.h"
-#include "Rooms.h"
+#include "Window.h"
+#include "Room.h"
 #include "Blueprint.h"
 
 namespace BuildingChallenge {
@@ -8,8 +8,8 @@ namespace BuildingChallenge {
 		struct LevelBlueprint {
 			LevelBlueprint() = default;
 			virtual ~LevelBlueprint() = default;
-			Blueprint<LevelAddons::Windows::Window> Windows;
-			Blueprint<LevelAddons::Rooms::Room> Rooms;
+			Blueprint<LevelAddons::Window> Windows;
+			Blueprint<LevelAddons::Room> Rooms;
 		};
 	}
 }

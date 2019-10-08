@@ -1,5 +1,6 @@
 #include "EntranceLevelBuilder.h"
 #include "LevelBuilder.h"
+#include "Clone.h"
 
 namespace BuildingChallenge {
 	namespace Builders {
@@ -11,7 +12,7 @@ namespace BuildingChallenge {
 
 		void EntranceLevelBuilder::Build(const Blueprints::EntranceLevelBlueprint& bp, Level& level) {
 			for (unsigned i = 0; i < bp.Entrances.Amount; ++i) {
-				level.AddOn(bp.Entrances.Factory.lock()->Create());
+				level.AddOn(Clone(&bp.Entrances.Item));
 			}
 			LevelBuilder().Build(bp, level);
 		}

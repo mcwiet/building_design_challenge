@@ -5,6 +5,7 @@
 namespace BuildingChallenge {
 	class Buildable {
 	public:
+		virtual ~Buildable() = default;
 		std::string GetName();
 		void Build();
 	protected:

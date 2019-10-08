@@ -74,18 +74,6 @@
     <ClInclude Include="Buildable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entrances.h">
-      <Filter>Header Files\Addons</Filter>
-    </ClInclude>
-    <ClInclude Include="Windows.h">
-      <Filter>Header Files\Addons</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowFactory.h">
-      <Filter>Header Files\Addons</Filter>
-    </ClInclude>
-    <ClInclude Include="EntranceFactory.h">
-      <Filter>Header Files\Addons</Filter>
-    </ClInclude>
     <ClInclude Include="StandardBuildingBlueprint.h">
       <Filter>Header Files\Blueprints</Filter>
     </ClInclude>
@@ -104,12 +92,6 @@
     <ClInclude Include="StandardBuildingBuilder.h">
       <Filter>Header Files\Builders</Filter>
     </ClInclude>
-    <ClInclude Include="Rooms.h">
-      <Filter>Header Files\Addons</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomFactory.h">
-      <Filter>Header Files\Addons</Filter>
-    </ClInclude>
     <ClInclude Include="Blueprint.h">
       <Filter>Header Files\Blueprints</Filter>
     </ClInclude>
@@ -119,7 +101,19 @@
     <ClInclude Include="LevelBlueprint.h">
       <Filter>Header Files\Blueprints</Filter>
     </ClInclude>
-    <ClInclude Include="Factory.h">
+    <ClInclude Include="Entrance.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="AddonQuestionnaire.h">
+      <Filter>Header Files\Architects</Filter>
+    </ClInclude>
+    <ClInclude Include="Clone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

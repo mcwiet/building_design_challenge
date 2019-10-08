@@ -134,30 +134,23 @@
     <ClCompile Include="StandardBuildingBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddonQuestionnaire.h" />
     <ClInclude Include="Blueprint.h" />
+    <ClInclude Include="Clone.h" />
     <ClInclude Include="CommandLineArchitect.h" />
-    <ClInclude Include="EntranceFactory.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Buildable.h" />
     <ClInclude Include="EntranceLevelBlueprint.h" />
     <ClInclude Include="EntranceLevelBuilder.h" />
-    <ClInclude Include="Entrances.h" />
-    <ClInclude Include="Factory.h" />
+    <ClInclude Include="Entrance.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelAddon.h" />
     <ClInclude Include="LevelBlueprint.h" />
     <ClInclude Include="LevelBuilder.h" />
-    <ClInclude Include="RoomFactory.h" />
-    <ClInclude Include="Rooms.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="StandardBuildingBlueprint.h" />
     <ClInclude Include="StandardBuildingBuilder.h" />
-    <ClInclude Include="WindowFactory.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="Windows.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

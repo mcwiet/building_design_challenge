@@ -2,22 +2,23 @@
 #include "StandardBuildingBlueprint.h"
 #include "EntranceLevelBlueprint.h"
 #include "LevelBlueprint.h"
-#include "Factory.h"
+#include "AddonQuestionnaire.h"
+#include <string>
 
 namespace BuildingChallenge {
 	namespace Architects {
 		class CommandLineArchitect {
 		public:
-			Blueprints::StandardBuildingBlueprint DesignStandardBuilding();
+			Blueprints::StandardBuildingBlueprint DesignStandardBuilding(
+				const AddonQuestionnaire<LevelAddons::Entrance>& entrance,
+				const AddonQuestionnaire<LevelAddons::Window>& windows,
+				const AddonQuestionnaire<LevelAddons::Room>& rooms);
 
 		private:
-			Blueprints::EntranceLevelBlueprint GetEntranceLevelBlueprint(unsigned);
-			Blueprints::LevelBlueprint GetLevelBlueprint(unsigned);
 			template <typename T>
-			Blueprints::Blueprint<T> GetAddon(unsigned, std::string, bool,
-				const std::map<std::string, std::shared_ptr<AbstractFactory<T>>, CaseInsensitiveCompare>&);
+			Blueprints::Blueprint<T> GetAddon(unsigned level, const AddonQuestionnaire<T>& quest);
 			unsigned GetNumberOfLevels();
-			unsigned GetPositiveValue(bool zero_valid);
+			unsigned GetPositiveValue(Minimum);
 			std::string GetUserInput();
 		};
 	}
