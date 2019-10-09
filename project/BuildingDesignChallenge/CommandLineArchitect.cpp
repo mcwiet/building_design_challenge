@@ -42,7 +42,7 @@ namespace BuildingChallenge {
 			std::cout << "Level " << level << ": " << quest.AddonTypeName << " Options: ";
 			for (auto& addon : quest.TypeMap) { std::cout << addon.first << ", "; }
 
-			bool need_style = (bp.Amount != 0) || ((bp.Amount == 0) && (quest.MinAmount == Minimum::One));
+			bool need_style = (bp.Amount != 0) || (quest.MinAmount == Minimum::One);
 			while (need_style) {
 				std::cout << std::endl;
 				std::cout << "Level " << level << ": " << quest.AddonTypeName << " Options: ";

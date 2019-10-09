@@ -34,7 +34,7 @@ int main() {
 
 	auto bp = Architects::CommandLineArchitect().DesignStandardBuilding(eq, wq, rq);
 
-	auto bldg = Builders::StandardBuildingBuilder().Build(bp);
+	Builders::StandardBuildingBuilder().Build(bp);
 
 	return 0;
 }

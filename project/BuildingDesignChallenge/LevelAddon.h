@@ -8,7 +8,7 @@ namespace BuildingChallenge {
 		public:
 			virtual ~LevelAddon() = default;
 		protected:
-			LevelAddon(const std::string& name) : Buildable(name) {}
+			explicit LevelAddon(const std::string& name) : Buildable(name) {}
 		};
 	}
 }

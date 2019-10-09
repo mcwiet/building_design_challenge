@@ -28,7 +28,7 @@ namespace BuildingChallenge {
 
 		template <typename T>
 		struct AddonQuestionnaire {
-			explicit AddonQuestionnaire(std::string type_name, AddonMap<T> map, Minimum min) :
+			explicit AddonQuestionnaire(const std::string& type_name, const AddonMap<T>& map, Minimum min) :
 				AddonTypeName(type_name),
 				TypeMap(map),
 				MinAmount(min) {}
